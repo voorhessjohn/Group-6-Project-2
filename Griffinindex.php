@@ -71,21 +71,27 @@ $this->Amount = $Amount;
         return $this->Extra;
     }
 }//an item class
+$itemDescipt1 = $items[0]->getDescription();
+$itemDescipt2 = $items[1]->getDescription();
+$itemDescipt3 = $items[2]->getDescription();
 
 echo '
     <title>Food Truck</title>
     <link rel="stylesheet" type="text/css" href="main.css"/>
     <form method = "post" action = "index.php">
-    <h1>Menu</h1>
-    Taco<input type ="number" min="0" name="firstItemAmount" /><br />
+    <h1>Menu</h1><br>
+    How many tacos: <input type ="number" min="0" name="firstItemAmount" /><br />
+    '.$itemDescipt1.'<br>
     <input type="checkbox" name="toppings1" value="sour cream"/>
     <input type="checkbox" name="toppings1" value="cheese"/>
     <input type="checkbox" name="toppings1" value="hot sauce"/><br /><br />
-    Sunday<input type ="number" min="0" name="secondItemAmount" /><br />
+    How many sundays: <input type ="number" min="0" name="secondItemAmount" /><br />
+    '.$itemDescipt2.'<br>
     <input type="checkbox" name="toppings2" value="sprinkles"/>
     <input type="checkbox" name="toppings2" value="chocolate sauce"/>
     <input type="checkbox" name="toppings2" value="nuts"/><br /><br />
-    Pizza<input type ="number" min="0" name="thirdItemAmount" /><br />
+    How many pizzas: <input type ="number" min="0" name="thirdItemAmount" /><br />
+    '.$itemDescipt1.'<br>
     <input type="checkbox" name="toppings2" value="pepperoni"/>
     <input type="checkbox" name="toppings2" value="sausage"/>
     <input type="checkbox" name="toppings2" value="bacon"/><br /><br />
