@@ -16,8 +16,11 @@ if(isset($_POST["checkOut"])){
         $saladQuantity = $_POST["saladQuantity"];
         $price += $saladQuantity*6.95;
     }
-    echo $price;
-
+    
+        
+    
+    echo("You selected $sundaeQuantity sundaes, $saladQuantity salads, and $tacoQuantity tacos. 
+    your total is $price");
     
 }else{
     echo 
