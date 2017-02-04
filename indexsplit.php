@@ -1,39 +1,46 @@
 <?php
+/**
+* indexsplit.php
+* 
+* it gets the users data, and gives the total value of 
+* their orders.
+*/
 
 define('THIS_PAGE',basename($_SERVER['PHP_SELF']));
-
 include "Item.php";
 $itemDescipt1 = $items[0]->getDescription();
 $itemDescipt2 = $items[1]->getDescription();
 $itemDescipt3 = $items[2]->getDescription();
-
 //Form for the user to choose how many of each item they want and what toppings they would like to add
 echo '
     <title>Food Truck</title>
     <link rel="stylesheet" type="text/css" href="main.css"/>
     <form method = "post" action = ' . THIS_PAGE . '>
-    <h1>Menu</h1><br>
-    How many tacos: <input type ="number" min="0" name="firstItemAmount" /><br />
-    '.$itemDescipt1.'<br>
-    sour cream <input type="checkbox" name="toppings1[]" value="sour cream"/>
-    cheese <input type="checkbox" name="toppings1[]" value="cheese"/>
-    hot sauce <input type="checkbox" name="toppings1[]" value="hot sauce"/><br /><br />
+    <h1>Food Truck</h1>
+    <h2>Menu</h2>
+    <label>How many tacos:</label>
+    <input type ="number" min="0" name="firstItemAmount"><br>
+    <p>'.$itemDescipt1.'</p>
+    Sour Cream <input type="checkbox" name="toppings1[]" value="sour cream"><br>
+    Cheese <input type="checkbox" name="toppings1[]" value="cheese"><br>
+    Hot Sauce <input type="checkbox" name="toppings1[]" value="hot sauce"><br><br>
     
-    How many sundaes: <input type ="number" min="0" name="secondItemAmount" /><br />
-    '.$itemDescipt2.'<br>
-    sprinkles<input type="checkbox" name="toppings2[]" value="sprinkles"/>
-    chocolate sauce<input type="checkbox" name="toppings2[]" value="chocolate sauce"/>
-    nuts<input type="checkbox" name="toppings2[]" value="nuts"/><br /><br />
+    <label>How many sundaes:</label>
+    <input type ="number" min="0" name="secondItemAmount"><br>
+    <p>'.$itemDescipt2.'</p>
+    Sprinkles<input type="checkbox" name="toppings2[]" value="sprinkles"><br>
+    Chocolate Sauce<input type="checkbox" name="toppings2[]" value="chocolate sauce"><br>
+    Nuts<input type="checkbox" name="toppings2[]" value="nuts"><br><br>
     
-    How many pizzas: <input type ="number" min="0" name="thirdItemAmount" /><br />
-    '.$itemDescipt1.'<br>
-    pepperoni<input type="checkbox" name="toppings3[]" value="pepperoni"/>
-    sausage<input type="checkbox" name="toppings3[]" value="sausage"/>
-    bacon<input type="checkbox" name="toppings3[]" value="bacon"/><br /><br />
-    <input type ="submit" value="Order" /><br />
+    <label>How many pizzas:</label> 
+    <input type ="number" min="0" name="thirdItemAmount"><br>
+    <p>'.$itemDescipt1.'</p>
+    Pepperoni<input type="checkbox" name="toppings3[]" value="pepperoni"><br>
+    Sausage<input type="checkbox" name="toppings3[]" value="sausage"><br>
+    Bacon<input type="checkbox" name="toppings3[]" value="bacon"><br><br>
+    <input type ="submit" value="Order"><br>
     <div>
     ';
-
 if($_POST){//show data  
     $items[0]->addAmount($_POST['firstItemAmount']);
     $items[1]->addAmount($_POST['secondItemAmount']);
