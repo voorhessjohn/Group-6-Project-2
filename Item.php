@@ -1,17 +1,23 @@
 <?php
 
-$myItem = new Item("Taco(s)","Our tacos are awesome",4.95,0);
-$items[] = $myItem; 
+/**
+* Item.php
+*
+* It creates the Class Item and its objects represent 
+* the Menu.
+*/
+
+/**
+* Class Item
+*
+* represent an item in the Menu and its extras. 
+* It creates the following propreties:
+* name, description, price, extras and amount
+*
+* @see Class Item
+*/
 
 
-$myItem = new Item("Sundae(s)","Our sundaes are awesome",3.95,0);
-$items[] = $myItem; 
-
-                    
-$myItem = new Item("Pizza(s)","Our pizzas are awesome",7.95,0);
-$items[] = $myItem;
-
-    
 class Item{
     public $Name = '';
     public $Description = '';
@@ -19,7 +25,7 @@ class Item{
     public $Extras = array();
     public $Amount = 0;
     
-    /*
+    /**
      * item constructor
      *
      * constructs an object of type item
@@ -30,7 +36,6 @@ class Item{
      * @param $Amount (Integer) Quantity of the item
      * @return (void) does not return
      */
-
     public function __construct($Name,$Description,$Price,$Amount){
     
         $this->Name = $Name;
@@ -40,7 +45,7 @@ class Item{
     
         
     }//an item constructor
-    /*
+    /**
      * addExtra()
      *
      * adds an extra to the array of extras in an item
@@ -51,44 +56,87 @@ class Item{
     public function addExtra($extra)
     {
         $this->Extras[] = $extra;
-    }//end addExtra()
+    }//end function addExtra()
     
-    
-    public function addAmount($amount)//Function that adds how many of an item a user wants
+    /**
+    * addAmount
+    *
+    * adds how many of an item a user wants
+    *
+    */
+    public function addAmount($amount)
     {
         $this->Amount = $amount;
-    }//end addAmount
+    }//end function addAmount
     
     //functions to get individual attributes of an object
-    /*
+    /**
      * getPrice()
      *
-     * function returns the price of the item
+     * function returns the price in dolla of the item
      * does not take a parameter
      * @return (Integer) returns item Price
      */
     public function getPrice()
     {
         return $this->Price;
-    }//end getPrice()
-  
+    }//end function getPrice()
+    /**
+     * getName()
+     *
+     * function returns the name of the item
+     * does not take a parameter
+     * @return (string) returns item Name
+     */ 
     public function getName()
     {
         return $this->Name;
-    }//end getName()
-  
+    }//end function getName()
+    /**
+     * getDescription()
+     *
+     * function returns the description of the item
+     * does not take a parameter
+     * @return (string) returns item Price
+     */
      public function getDescription()
     {
         return $this->Description;
-    }//end getDescription
-  
+    }//end function getDescription
+    /**
+     * getAmount()
+     *
+     * function returns the quantity of the item
+     * does not take a parameter
+     * @return (Integer) returns item Amount
+     */
     public function getAmount()
     {
         return $this->Amount;
-    }//end getAmount()
-  
+    }//end function getAmount()
+    /**
+     * getExtras()
+     *
+     * function returns the chosen extra(s) of the item
+     * does not take a parameter
+     * @return (string) returns item Extra(s)
+     */
     public function getExtras()
     {
         return $this->Extras;
-    }//end getExtras()
+    }//end function getExtras()
+    
 }//an item class
+
+/**
+* Objects of the Class Item which represent the Menu.
+*
+*/
+
+$myItem = new Item("Taco(s)","Our tacos are awesome!",4.95,0);
+$items[] = $myItem; 
+$myItem = new Item("Sundae(s)","Our sundaes are awesome!",3.95,0);
+$items[] = $myItem; 
+                    
+$myItem = new Item("Pizza(s)","Our pizzas are awesome!",7.95,0);
+$items[] = $myItem;
