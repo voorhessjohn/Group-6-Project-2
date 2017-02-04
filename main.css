@@ -1,0 +1,48 @@
+
+form{
+    width: 350px;
+    margin:auto;
+    border: 2px solid black;
+    padding: 1em;
+   
+}
+div{
+    margin: 25px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: red;
+    text-align: center;
+    margin: 1em 0 .5em .5em;
+}
+
+p {
+    margin: .5em 0;
+}
+
+label {
+    float: left;
+    margin-right: .5em;
+    text-align: right;
+    margin-bottom: .2em;
+}
+input {
+    float: left;
+    margin-right: 1em;
+    margin-bottom: .8em;
+}
+
+input[type=submit] {
+     float: right;
+     margin: 4px 2px;
+     cursor: pointer;
+}
+br {
+    clear: both;
+    margin-bottom: .2em;
+}
+
