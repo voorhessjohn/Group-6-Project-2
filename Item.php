@@ -18,7 +18,8 @@
 */
 
 
-class Item{
+class Item
+{
     public $Name = '';
     public $Description = '';
     public $Price = 0;
@@ -36,7 +37,8 @@ class Item{
      * @param $Amount (Integer) Quantity of the item
      * @return (void) does not return
      */
-    public function __construct($Name,$Description,$Price,$Amount){
+    public function __construct($Name,$Description,$Price,$Amount)
+    {
     
         $this->Name = $Name;
         $this->Description = $Description;
